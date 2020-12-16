@@ -2,3 +2,13 @@
 # где hh - часы, mm- минуты, ss - секунды.
 # Пример:
 # 29143 секунд → 08:05:43
+
+def format_time(ss):
+    ss = ss % (24 * 3600)
+    hh = ss // 3600
+    ss %= 3600
+    mm = ss // 60
+    ss %= 60
+    return "%d:%d:%d" % (hh, mm, ss)
+
+print(format_time(13653))
